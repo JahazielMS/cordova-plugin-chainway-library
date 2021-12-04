@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-chainway-library" version="1.0.0"
+  xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>ChainwayLibrary</name>
+  <js-module name="ChainwayLibrary" src="www/ChainwayLibrary.js">
+    <clobbers target="cordova.plugins.ChainwayLibrary" />
+  </js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="ChainwayLibrary">
+        <param name="android-package" value="com.al.ChainwayLibrary" />
+      </feature>
+    </config-file>
+    <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+    <resource-file src="libs/device_api.aar" target="libs/device_api.aar" />
+    <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+
+    <!-- <source-file src="src/android/ChainwayLibrary.java" target-dir="src/cordova-plugin-chainway-library/ChainwayLibrary" /> -->
+  </platform>
+</plugin>

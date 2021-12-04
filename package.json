@@ -1,0 +1,27 @@
+{
+  "name": "chainway-library",
+  "version": "1.0.0",
+  "description": "Instalar libreria scanner chainway",
+  "cordova": {
+    "id": "cordova-plugin-chainway-library",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "chainway-scanner"
+  ],
+  "author": "Jahaziel Medina",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JahazielMS/cordova-plugin-chainway-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JahazielMS/cordova-plugin-chainway-library/issues"
+  },
+  "homepage": "https://github.com/JahazielMS/cordova-plugin-chainway-library#readme"
+}
+
