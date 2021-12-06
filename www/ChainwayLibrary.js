@@ -2,7 +2,7 @@ var exec = require('cordova/exec');
 
 
 
-var chainwayScan = {
+var chainway = {
   IResult: function() {
     return execute(null, null, 'MainScan', 'IResult', [])
   }
