@@ -4,7 +4,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
   <name>ChainwayLibrary</name>
   <js-module name="ChainwayLibrary" src="www/ChainwayLibrary.js">
-    <clobbers target="plugins.chainway" />
+    <clobbers target="cordova.plugins.chainway" />
   </js-module>
   <platform name="android">
     <config-file parent="/*" target="res/xml/config.xml">
