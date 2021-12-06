@@ -1,4 +1,4 @@
-package com.infra.entregas;
+package cordova-plugin-chainway-library;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -13,7 +13,7 @@ import org.apache.cordova.CallbackContext;
 import java.util.ArrayList;
 import android.webkit.WebView;
 
-public class MainActivity extends CordovaActivity implements IBarcodeResult {
+public class MainScan extends CordovaActivity implements IBarcodeResult {
     private Barcode2D barcode2D;
     public static String BarcodeRes = "";
     // private JsInterface jsInterface;
@@ -22,22 +22,13 @@ public class MainActivity extends CordovaActivity implements IBarcodeResult {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        // super.init();
-
         barcode2D = new Barcode2D(this);
-        // jsInterface = new JsInterface(this);
-
         new InitTask().execute();
         // enable Cordova apps to be started in the background
         Bundle extras = getIntent().getExtras();
         if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
             moveTaskToBack(true);
         }
-
-        // INJECT OUR JS INTERFACE HERE!
-        // WebView webView = (WebView) this.appView.getEngine().getView();
-        // webView.getSettings().setJavaScriptEnabled(true);
-        // webView.addJavascriptInterface(new JsInterface(webView.getContext()), "android");
 
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
