@@ -13,7 +13,7 @@
       </feature>
     </config-file>
     <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-    <resource-file src="libs/device_api.aar" target="libs/device_api.aar" />
+    <source-file src="libs/device_api.aar" target-dir="libs/device_api.aar" />
     <config-file parent="/*" target="AndroidManifest.xml"></config-file>
     <source-file src="src/android/MainScan.java" target-dir="src/com/al/chainwaylibrary" />
     <source-file src="src/android/Barcode2D.java" target-dir="src/com/al/chainwaylibrary" />
