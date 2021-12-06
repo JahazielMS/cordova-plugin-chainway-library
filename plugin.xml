@@ -15,10 +15,8 @@
     <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     <resource-file src="libs/device_api.aar" target="libs/device_api.aar" />
     <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-    <source-file src="src/android/MainScan.java" target-dir="src/cordova-plugin-chainway-library/MainScan" />
-    <source-file src="src/android/Barcode2D.java" target-dir="src/com.plugin.scan.ChainwayScannerPluginr" />
-    <source-file src="src/android/IBarcodeResult.java" target-dir="src/com.plugin.scan.ChainwayScannerPluginr" />
-
-    <!-- <source-file src="src/android/ChainwayLibrary.java" target-dir="src/cordova-plugin-chainway-library/ChainwayLibrary" /> -->
+    <source-file src="src/android/MainScan.java" target-dir="src/com.al.ChainwayLibrary.MainScan" />
+    <source-file src="src/android/Barcode2D.java" target-dir="src/com.al.ChainwayLibrary.Barcode2D" />
+    <source-file src="src/android/IBarcodeResult.java" target-dir="src/com.al.ChainwayLibrary.IBarcodeResult" />
   </platform>
 </plugin>

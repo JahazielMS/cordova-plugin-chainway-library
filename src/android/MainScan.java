@@ -21,17 +21,9 @@ public class MainScan extends CordovaActivity implements IBarcodeResult {
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
+        // super.onCreate(savedInstanceState);
         barcode2D = new Barcode2D(this);
         new InitTask().execute();
-        // enable Cordova apps to be started in the background
-        Bundle extras = getIntent().getExtras();
-        if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
-            moveTaskToBack(true);
-        }
-
-        // Set by <content src="index.html" /> in config.xml
-        loadUrl(launchUrl);
     }
 
     public void initScanner() {
