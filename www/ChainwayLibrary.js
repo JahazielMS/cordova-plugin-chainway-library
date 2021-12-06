@@ -11,7 +11,7 @@ var exec = require('cordova/exec');
 // }
 
 exports.IResult = function(args, success, error) {
-  exec(success, error, 'MainScan', 'IResult', [])
+  return exec(success, error, 'MainScan', 'IResult', [])
 }
 
 // var execute = require('cordova/exec');
