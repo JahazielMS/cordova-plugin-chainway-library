@@ -3,6 +3,7 @@ package com.al.chainwaylibrary;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.os.Bundle;
+
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -13,7 +14,7 @@ import org.apache.cordova.CallbackContext;
 import java.util.ArrayList;
 import android.webkit.WebView;
 
-public class MainScan extends CordovaActivity implements IBarcodeResult {
+public class MainScan extends CordovaPlugin implements IBarcodeResult {
     private Barcode2D barcode2D;
     public static String BarcodeRes = "";
 
