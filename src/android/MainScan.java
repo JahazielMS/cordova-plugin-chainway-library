@@ -50,12 +50,7 @@ public class MainScan extends CordovaActivity implements IBarcodeResult {
               PluginResult result = new PluginResult(PluginResult.Status.NO_RESULT);
               result.setKeepCallback(true);
               callbackContext.sendPluginResult(result);
-            })
-
-            // String message = args.getString(0);
-            // PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
-            // pluginResult.setKeepCallback(true);
-            // callbackContext.sendPluginResult(pluginResult);
+            });
             return true;
         }
         return false;
