@@ -12,7 +12,7 @@ public class Barcode2D {
     private String TAG = "Scanner_barcodeTest";
     private BarcodeUtility barcodeUtility = null;
     private BarcodeDataReceiver barcodeDataReceiver = null;
-    private IBarcodeResult iBarcodeResult = null;
+    private com.al.chainwaylibrary.IBarcodeResultI iBarcodeResult = null;
     private Context context;
 
     public Barcode2D(Context context) {

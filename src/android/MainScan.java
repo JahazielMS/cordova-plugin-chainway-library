@@ -20,7 +20,7 @@ public class MainScan extends CordovaActivity implements IBarcodeResult {
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        // super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
         barcode2D = new Barcode2D(this);
         new InitTask().execute();
     }
@@ -32,11 +32,7 @@ public class MainScan extends CordovaActivity implements IBarcodeResult {
     // @Override
     public void getBarcode(String barcode) {
         Log.d(TAG,"BarcodeResult:" + barcode);
-
         BarcodeRes = barcode;
-
-        // WebView webView = null;
-        // webView.addJavascriptInterface(barcode), "android");
     }
 
     // @Override
