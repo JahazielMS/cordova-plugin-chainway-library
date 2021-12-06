@@ -45,10 +45,17 @@ public class MainScan extends CordovaActivity implements IBarcodeResult {
             String message = args.getString(0);
             return true;
         } else if (action.equals("IResult")) {
-            String message = args.getString(0);
-            PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
-            pluginResult.setKeepCallback(true);
-            callbackContext.sendPluginResult(pluginResult);
+            this.currentCallbackContext = callbackContext;
+            cordova.getThreadPool().execute(() -> {
+              PluginResult result = new PluginResult(PluginResult.Status.NO_RESULT);
+              result.setKeepCallback(true);
+              callbackContext.sendPluginResult(result);
+            })
+
+            // String message = args.getString(0);
+            // PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
+            // pluginResult.setKeepCallback(true);
+            // callbackContext.sendPluginResult(pluginResult);
             return true;
         }
         return false;
@@ -61,30 +68,6 @@ public class MainScan extends CordovaActivity implements IBarcodeResult {
             callbackContext.error("Expected one non-empty string argument.");
         }
     }
-
-    // public void execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
-        // switch (action) {
-        //     case "coolMethod":
-        //         // localNotification(args, callbackContext);
-        //         coolMethod();
-        //         break;
-        //     case "localNotificationSchedule":
-        //         // localNotificationSchedule(args.getJSONObject(1), callbackContext);
-        //         break;
-        //     case "cancelAllNotifications":
-        //         // cancelAllNotifications(callbackContext);
-        //         break;
-        //     case "cancelNotifications":
-        //         // cancelNotifications(callbackContext);
-        //         break;
-        //     case "cancelScheduledNotifications":
-        //         // cancelScheduledNotifications(callbackContext);
-        //         break;
-        //     case "cancelNotificationsWithId":
-        //         // cancelNotificationsWithId(args.getJSONArray(1), callbackContext);
-        //         break;
-        // }
-    // }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {

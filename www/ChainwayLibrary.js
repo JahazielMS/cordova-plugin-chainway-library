@@ -1,12 +1,20 @@
 var exec = require('cordova/exec');
 
-exports.coolMethod = function(arg0, success, error) {
-  exec(success, error, 'MainScan', 'coolMethod', [arg0])
+
+
+var chainwayScan = {
+  IResult: function() {
+    return execute(null, null, 'MainScan', 'IResult', [])
+  }
 }
 
-exports.IResult = function(arg0, success, error) {
-  exec(success, error, 'MainScan', 'IResult', [arg0])
-}
+// exports.coolMethod = function(arg0, success, error) {
+//   exec(success, error, 'MainScan', 'coolMethod', [arg0])
+// }
+
+// exports.IResult = function(arg0, success, error) {
+//   exec(success, error, 'MainScan', 'IResult', [])
+// }
 
 // var execute = require('cordova/exec');
 
