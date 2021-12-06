@@ -1,4 +1,4 @@
-package cordova-plugin-chainway-library;
+package com.al.chainwaylibrary;
 
 import android.os.AsyncTask;
 import android.util.Log;
