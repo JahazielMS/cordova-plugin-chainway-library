@@ -12,7 +12,7 @@ public class Barcode2D {
     private String TAG = "Scanner_barcodeTest";
     private BarcodeUtility barcodeUtility = null;
     private BarcodeDataReceiver barcodeDataReceiver = null;
-    private IBarcodeResultI iBarcodeResult = null;
+    private IBarcodeResult iBarcodeResult = null;
     private Context context;
 
     public Barcode2D(Context context) {
@@ -20,7 +20,6 @@ public class Barcode2D {
         this.context = context;
     }
 
-    //开始扫码
     public void startScan(Context context) {
         if (barcodeUtility != null) {
             Log.i(TAG, "ScanBarcode");
@@ -28,7 +27,6 @@ public class Barcode2D {
         }
     }
 
-    //停止扫描
     public void stopScan(Context context) {
         if (barcodeUtility != null) {
             Log.i(TAG, "stopScan");
@@ -80,6 +78,7 @@ public class Barcode2D {
                 if (barCode == null) {
                     barCode = "Scan fail";
                 }
+                
                 if (iBarcodeResult != null)
                     iBarcodeResult.getBarcode(barCode);
             }
