@@ -16,15 +16,14 @@ import android.webkit.WebView;
 public class MainScan extends CordovaActivity implements IBarcodeResult {
     private Barcode2D barcode2D;
     public static String BarcodeRes = "";
-    // private JsInterface jsInterface;
 
-    // @Override
-    // public void onCreate(Bundle savedInstanceState)
-    // {
-    //     // super.onCreate(savedInstanceState);
-    //     barcode2D = new Barcode2D(this);
-    //     new InitTask().execute();
-    // }
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        // super.onCreate(savedInstanceState);
+        barcode2D = new Barcode2D(this);
+        new InitTask().execute();
+    }
 
     public void initScanner() {
         Log.d(TAG,"initScanner");
