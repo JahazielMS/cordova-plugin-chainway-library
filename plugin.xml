@@ -15,8 +15,8 @@
     <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     <resource-file src="libs/device_api.aar" target="libs/device_api.aar" />
     <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-    <source-file target-dir="src/com.infra.entregas.MainActivity" />
-    <!-- D:\AndroidApps\Aplicaciones\EntregasOxidom\platforms\android\app\src\main\java\com\infra\entregas -->
+    <source-file src="src/android/MainActivity.java" target-dir="src/cordova-plugin-chainway-library/MainActivity" />
+
     <!-- <source-file src="src/android/ChainwayLibrary.java" target-dir="src/cordova-plugin-chainway-library/ChainwayLibrary" /> -->
   </platform>
 </plugin>
