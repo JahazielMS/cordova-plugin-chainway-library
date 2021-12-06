@@ -41,9 +41,6 @@ public class MainScan extends CordovaActivity implements IBarcodeResult {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
             return true;
-        } else if (action.equals("coolMethod")) {
-            String message = args.getString(0);
-            return true;
         } else if (action.equals("start")) {
             String message = args.getString(0);
             return true;
