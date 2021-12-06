@@ -14,7 +14,7 @@ import org.apache.cordova.CallbackContext;
 import java.util.ArrayList;
 import android.webkit.WebView;
 
-public class MainScan extends CordovaActivity, CordovaPlugin implements IBarcodeResult {
+public class MainScan extends CordovaActivity implements IBarcodeResult {
     private Barcode2D barcode2D;
     public static String BarcodeRes = "";
 
@@ -46,23 +46,29 @@ public class MainScan extends CordovaActivity, CordovaPlugin implements IBarcode
             String message = args.getString(0);
             return true;
         } else if (action.equals("IResult")) {
-            this.currentCallbackContext = callbackContext;
-            cordova.getThreadPool().execute(() -> {
-              PluginResult result = new PluginResult(PluginResult.Status.NO_RESULT);
-              result.setKeepCallback(true);
-              callbackContext.sendPluginResult(result);
-            });
+            String message = "Test";
+            // this.currentCallbackContext = callbackContext;
+            this.IResult(message, callbackContext);
+            // callbackContext.sendPluginResult(result);
+            // cordova.getThreadPool().execute(() -> {
+            //   PluginResult result = new PluginResult(PluginResult.Status.NO_RESULT);
+            //   result.setKeepCallback(true);
+            //   callbackContext.sendPluginResult(result);
+            // });
             return true;
         }
         return false;
     }
 
     private void IResult(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message + " - " + BarcodeRes);
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
-        }
+
+        callbackContext.success(message + " - " + BarcodeRes);
+
+        // if (message != null && message.length() > 0) {
+        //     callbackContext.success(message + " - " + BarcodeRes);
+        // } else {
+        //     callbackContext.error("Expected one non-empty string argument.");
+        // }
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
