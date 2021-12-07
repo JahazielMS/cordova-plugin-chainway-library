@@ -3,7 +3,6 @@ package com.al.chainwaylibrary;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.os.Bundle;
-import android.content.Context;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
@@ -17,25 +16,20 @@ import android.webkit.WebView;
 
 public class ScanActivity extends CordovaActivity implements IBarcodeResult {
     private Barcode2D barcode2D;
-    public String BarcodeRes = "";
-    private Context context;
+    public static String BarcodeRes = "";
 
     // @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         barcode2D = new Barcode2D(this);
-        this.context = getApplicationContext();
         new InitTask().execute();
     }
 
     // @Override
     public void getBarcode(String barcode) {
         Log.d(TAG,"BarcodeResult:" + barcode);
-        this.BarcodeRes = barcode;
-    }
-
-    public String getState(){
-        return BarcodeRes;
+        BarcodeRes = barcode;
     }
 
     // @Override

@@ -14,9 +14,10 @@ import org.json.JSONObject;
 
 public class MainScan extends CordovaPlugin {
 
+    public String Barcode = "";
+    
     // @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        
         if (action.equals("coolMethod")) {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
@@ -37,20 +38,11 @@ public class MainScan extends CordovaPlugin {
         }
     }
 
-    // private void ScanActivity(Context context) {
     private void ScanActivity(String message, CallbackContext callbackContext) {
-        Context context = cordova.getActivity().getApplicationContext();
         if (message != null && message.length() > 0) {
-            ScanActivity appState = ((ScanActivity)getApplicationContext());
-            String x = appState.getState();
-            appState.setState(x);
-            callbackContext.success(x);
+            callbackContext.success(message + " Barcode: " + Barcode);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
-        
-
-        // Intent intent = new Intent(context, ScanActivity.class);
-        // this.cordova.getActivity().startActivity(intent);
     }
 }
