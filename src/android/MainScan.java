@@ -16,7 +16,7 @@ public class MainScan extends CordovaPlugin {
 
     // @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        // Context context = cordova.getActivity().getApplicationContext();
+        
         if (action.equals("coolMethod")) {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
@@ -39,6 +39,7 @@ public class MainScan extends CordovaPlugin {
 
     // private void ScanActivity(Context context) {
     private void ScanActivity(String message, CallbackContext callbackContext) {
+        Context context = cordova.getActivity().getApplicationContext();
         if (message != null && message.length() > 0) {
             ScanActivity appState = ((ScanActivity)getApplicationContext());
             String x = appState.getState();

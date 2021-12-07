@@ -18,11 +18,13 @@ import android.webkit.WebView;
 public class ScanActivity extends CordovaActivity implements IBarcodeResult {
     private Barcode2D barcode2D;
     public String BarcodeRes = "";
+    private Context context;
 
     // @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         barcode2D = new Barcode2D(this);
+        this.context = getApplicationContext();
         new InitTask().execute();
     }
 
