@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.Log;
+import android.os.Bundle;
 
 import com.rscja.barcode.BarcodeUtility;
 
@@ -16,11 +17,11 @@ public class Barcode2D {
     private Context context;
 
 
-    // public void onCreate(Bundle savedInstanceState) {
-    //     super.onCreate(savedInstanceState);
-    //     // barcode2D = new Barcode2D(this);
-    //     new InitTask().execute();
-    // }
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // barcode2D = new Barcode2D(this);
+        // new InitTask().execute();
+    }
 
     // public class InitTask extends AsyncTask<String, Integer, Boolean> {
     //     @Override
