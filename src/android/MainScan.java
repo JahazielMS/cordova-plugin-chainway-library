@@ -1,8 +1,12 @@
 package com.al.chainwaylibrary;
 
+import android.content.Context;
+import android.content.Intent;
+
 import org.apache.cordova.*;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaInterface;
 
 import org.json.JSONArray;
 import org.json.JSONException;

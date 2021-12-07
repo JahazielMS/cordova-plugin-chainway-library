@@ -34,36 +34,14 @@ public class ScanActivity extends CordovaActivity implements IBarcodeResult {
     }
 
     // @Override
-    // public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
             return true;
         }
-
-        // if (action.equals("coolMethod")) {
-        //     String message = args.getString(0);
-        //     this.coolMethod(message, callbackContext);
-        //     return true;
-        // } else if (action.equals("start")) {
-        //     String message = args.getString(0);
-        //     return true;
-        // } else if (action.equals("IResult")) {
-        //     String message =args.getString(0);
-        //     this.IResult(message, callbackContext);
-        //     return true;
-        // }
         return false;
     }
-
-    // private void IResult(String message, CallbackContext callbackContext) {
-    //     if (message != null && message.length() > 0) {
-    //         callbackContext.success(message + " - " + BarcodeRes);
-    //     } else {
-    //         callbackContext.error("Expected one non-empty string argument.");
-    //     }
-    // }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
