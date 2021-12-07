@@ -16,36 +16,36 @@ public class Barcode2D {
     private Context context;
 
 
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // barcode2D = new Barcode2D(this);
-        new InitTask().execute();
-    }
+    // public void onCreate(Bundle savedInstanceState) {
+    //     super.onCreate(savedInstanceState);
+    //     // barcode2D = new Barcode2D(this);
+    //     new InitTask().execute();
+    // }
 
-    public class InitTask extends AsyncTask<String, Integer, Boolean> {
-        @Override
-        protected Boolean doInBackground(String... params) {
-            try {
-                open();
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            return true;
-        }
+    // public class InitTask extends AsyncTask<String, Integer, Boolean> {
+    //     @Override
+    //     protected Boolean doInBackground(String... params) {
+    //         try {
+    //             open();
+    //             Thread.sleep(1000);
+    //         } catch (InterruptedException e) {
+    //             e.printStackTrace();
+    //         }
+    //         return true;
+    //     }
 
-        @Override
-        protected void onPostExecute(Boolean result) {
-            super.onPostExecute(result);
-            Log.d(TAG,"onPostExecute:" + result);
-        }
+    //     @Override
+    //     protected void onPostExecute(Boolean result) {
+    //         super.onPostExecute(result);
+    //         Log.d(TAG,"onPostExecute:" + result);
+    //     }
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            Log.d(TAG,"onPreExecute: init..." );
-        }
-    }
+    //     @Override
+    //     protected void onPreExecute() {
+    //         super.onPreExecute();
+    //         Log.d(TAG,"onPreExecute: init..." );
+    //     }
+    // }
 
     public Barcode2D(Context context) {
         barcodeUtility = BarcodeUtility.getInstance();
