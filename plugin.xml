@@ -7,9 +7,6 @@
     <clobbers target="cordova.plugins.chainway" />
   </js-module>
   <platform name="android">
-    <edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='MainActivity']" mode="overwrite">
-      <activity android:name="MainActivity" android:label="NewLabel" android:configChanges="orientation|keyboardHidden" />
-    </edit-config>
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="MainActivity">
         <param name="android-package" value="com.al.chainwaylibrary.MainActivity" />
