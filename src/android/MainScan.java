@@ -16,12 +16,14 @@ public class MainScan extends CordovaPlugin {
 
     // @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        Context context = cordova.getActivity().getApplicationContext();
         if (action.equals("coolMethod")) {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
             return true;
         } else if (action.equals("IResult")) {
-            this.Barcode2D(context);
+            // this.openNewActivity(context);
+            this.ScanActivity(context);
             return true;
         }
         return false;
@@ -35,8 +37,8 @@ public class MainScan extends CordovaPlugin {
         }
     }
 
-    private void Barcode2D(Context context) {
-        Intent intent = new Intent(context, Barcode2D.class);
+    private void ScanActivity(Context context) {
+        Intent intent = new Intent(context, ScanActivity.class);
         this.cordova.getActivity().startActivity(intent);
     }
 }
