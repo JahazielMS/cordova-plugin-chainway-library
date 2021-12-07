@@ -54,7 +54,6 @@ public class MainScan extends CordovaActivity implements IBarcodeResult {
     }
 
     private void IResult(String message, CallbackContext callbackContext) {
-        // callbackContext.success(message + " - " + BarcodeRes);
         if (message != null && message.length() > 0) {
             callbackContext.success(message + " - " + BarcodeRes);
         } else {
