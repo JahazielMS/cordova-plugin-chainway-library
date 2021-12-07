@@ -17,7 +17,7 @@ import android.webkit.WebView;
 
 public class ScanActivity extends CordovaActivity implements IBarcodeResult {
     private Barcode2D barcode2D;
-    public static String BarcodeRes = "";
+    public String BarcodeRes = "";
 
     // @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,11 @@ public class ScanActivity extends CordovaActivity implements IBarcodeResult {
     // @Override
     public void getBarcode(String barcode) {
         Log.d(TAG,"BarcodeResult:" + barcode);
-        BarcodeRes = barcode;
+        this.BarcodeRes = barcode;
+    }
+
+    public String getState(){
+        return BarcodeRes;
     }
 
     // @Override

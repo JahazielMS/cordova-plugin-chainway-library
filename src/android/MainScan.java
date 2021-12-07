@@ -16,14 +16,14 @@ public class MainScan extends CordovaPlugin {
 
     // @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        Context context = cordova.getActivity().getApplicationContext();
+        // Context context = cordova.getActivity().getApplicationContext();
         if (action.equals("coolMethod")) {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
             return true;
         } else if (action.equals("IResult")) {
-            // this.openNewActivity(context);
-            this.ScanActivity(context);
+            String message = args.getString(0);
+            this.ScanActivity(message, callbackContext);
             return true;
         }
         return false;
@@ -37,8 +37,19 @@ public class MainScan extends CordovaPlugin {
         }
     }
 
-    private void ScanActivity(Context context) {
-        Intent intent = new Intent(context, ScanActivity.class);
-        this.cordova.getActivity().startActivity(intent);
+    // private void ScanActivity(Context context) {
+    private void ScanActivity(String message, CallbackContext callbackContext) {
+        if (message != null && message.length() > 0) {
+            ScanActivity appState = ((ScanActivity)getApplicationContext());
+            String x = appState.getState();
+            appState.setState(x);
+            callbackContext.success(x);
+        } else {
+            callbackContext.error("Expected one non-empty string argument.");
+        }
+        
+
+        // Intent intent = new Intent(context, ScanActivity.class);
+        // this.cordova.getActivity().startActivity(intent);
     }
 }
