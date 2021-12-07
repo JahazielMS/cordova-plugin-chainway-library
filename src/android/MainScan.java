@@ -8,7 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MainScan extends CordovaActivity implements ScanActivity {
+public class MainScan extends CordovaPlugin implements ScanActivity {
 
     // @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
