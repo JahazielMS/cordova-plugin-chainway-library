@@ -11,9 +11,16 @@ public class MainScan extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("IResult")) {
-            String message = args.getString(0);
-            this.IResult(message, callbackContext);
-            return true;
+            this.currentCallbackContext = callbackContext;
+            cordova.getThreadPool().execute(() -> {
+                    PluginResult result = new PluginResult(PluginResult.Status.OK);
+                    result.setKeepCallback(true);
+                    callbackContext.sendPluginResult(result);
+            });
+
+            // String message = args.getString(0);
+            // this.IResult(message, callbackContext);
+            // return true;
         }
         return false;
     }
