@@ -8,18 +8,19 @@
   </js-module>
   <platform name="android">
     <config-file parent="/*" target="res/xml/config.xml">
-      <feature name="MainActivity">
-        <param name="android-package" value="com.al.chainwaylibrary.MainActivity" />
-      </feature>
       <feature name="MainScan">
-        <param name="android-package" value="com.al.chainwaylibrary.MainScan" />
+        <param name="android-package" value="com.infra.entregas.MainScan" />
       </feature>
     </config-file>
     <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-    <source-file src="src/android/MainActivity.java" target-dir="src/com/al/chainwaylibrary" />
+    <!-- <source-file src="src/android/MainActivity.java" target-dir="src/com/al/chainwaylibrary" />
     <source-file src="src/android/MainScan.java" target-dir="src/com/al/chainwaylibrary" />
     <source-file src="src/android/Barcode2D.java" target-dir="src/com/al/chainwaylibrary" />
-    <source-file src="src/android/IBarcodeResult.java" target-dir="src/com/al/chainwaylibrary" />
+    <source-file src="src/android/IBarcodeResult.java" target-dir="src/com/al/chainwaylibrary" /> -->
+
+    <source-file src="src/android/MainScan.java" target-dir="src/com/infra/entregas" />
+    <source-file src="src/android/Barcode2D.java" target-dir="src/com/infra/entregas" />
+    <source-file src="src/android/IBarcodeResult.java" target-dir="src/com/infra/entregas" />
   </platform>
 </plugin>
