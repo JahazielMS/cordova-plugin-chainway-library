@@ -15,14 +15,12 @@ import org.apache.cordova.CallbackContext;
 import java.util.ArrayList;
 import android.webkit.WebView;
 
-// public class MainScan extends CordovaActivity implements IBarcodeResult {
-public class ScanActivity extends CordovaActivity implements IBarcodeResult {
+public class MainScan extends CordovaActivity implements IBarcodeResult {
     private Barcode2D barcode2D;
     public static String BarcodeRes = "";
 
     // @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         barcode2D = new Barcode2D(this);
         new InitTask().execute();
@@ -53,6 +51,7 @@ public class ScanActivity extends CordovaActivity implements IBarcodeResult {
     }
 
     public class InitTask extends AsyncTask<String, Integer, Boolean> {
+
         @Override
         protected Boolean doInBackground(String... params) {
             try {
