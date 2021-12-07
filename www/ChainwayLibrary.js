@@ -6,13 +6,13 @@ var exec = require('cordova/exec');
 //   }
 // }
 
-// exports.coolMethod = function(arg0, success, error) {
-//   exec(success, error, 'MainScan', 'coolMethod', [arg0])
-// }
-
-exports.IResult = function(args, success, error) {
-  return exec(success, error, 'MainScan', 'IResult', [])
+exports.coolMethod = function(arg0, success, error) {
+  exec(success, error, 'MainScan', 'coolMethod', [arg0])
 }
+
+// exports.IResult = function(args, success, error) {
+//   return exec(success, error, 'MainScan', 'IResult', [])
+// }
 
 // var execute = require('cordova/exec');
 // var chainwayScan = {
