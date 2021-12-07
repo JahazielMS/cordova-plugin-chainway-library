@@ -14,7 +14,7 @@ import org.apache.cordova.CallbackContext;
 import java.util.ArrayList;
 import android.webkit.WebView;
 
-public class MainScan implements IBarcodeResult {
+public class MainScan extends CordovaActivity implements IBarcodeResult {
     private Barcode2D barcode2D;
     public static String BarcodeRes = "";
 
