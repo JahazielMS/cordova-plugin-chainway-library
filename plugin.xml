@@ -15,7 +15,7 @@
     <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     <config-file parent="/*" target="AndroidManifest.xml"></config-file>
     <source-file src="src/android/MainScan.java" target-dir="src/com/al/chainwaylibrary" />
-    <source-file src="src/android/ScanAvtivity.java" target-dir="src/com/al/chainwaylibrary" />
+    <source-file src="src/android/ScanActivity.java" target-dir="src/com/al/chainwaylibrary" />
     <source-file src="src/android/Barcode2D.java" target-dir="src/com/al/chainwaylibrary" />
     <source-file src="src/android/IBarcodeResult.java" target-dir="src/com/al/chainwaylibrary" />
   </platform>
