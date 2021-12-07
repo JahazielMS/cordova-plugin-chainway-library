@@ -3,6 +3,7 @@ package com.al.chainwaylibrary;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.os.Bundle;
+import android.content.Context;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
