@@ -53,7 +53,6 @@ public class ScanActivity extends CordovaActivity implements IBarcodeResult {
     }
 
     public class InitTask extends AsyncTask<String, Integer, Boolean> {
-
         @Override
         protected Boolean doInBackground(String... params) {
             try {
@@ -75,7 +74,7 @@ public class ScanActivity extends CordovaActivity implements IBarcodeResult {
         protected void onPreExecute() {
             super.onPreExecute();
             Log.d(TAG,"onPreExecute: init..." );
-    }
+        }
     }
 
     private void start() {

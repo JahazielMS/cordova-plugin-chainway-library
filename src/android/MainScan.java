@@ -21,7 +21,7 @@ public class MainScan extends CordovaPlugin {
             this.coolMethod(message, callbackContext);
             return true;
         } else if (action.equals("IResult")) {
-            this.ScanActivity(context);
+            this.Barcode2D(context);
             return true;
         }
         return false;
@@ -35,8 +35,8 @@ public class MainScan extends CordovaPlugin {
         }
     }
 
-    private void ScanActivity(Context context) {
-        Intent intent = new Intent(context, ScanActivity.class);
+    private void Barcode2D(Context context) {
+        Intent intent = new Intent(context, Barcode2D.class);
         this.cordova.getActivity().startActivity(intent);
     }
 }
