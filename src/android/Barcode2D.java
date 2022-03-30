@@ -24,7 +24,6 @@ public class Barcode2D {
         this.context = context;
     }
 
-    //开始扫码
     public void startScan(Context context) {
         Log.d(TAG, "StartScan BCD2");
         if (barcodeUtility != null) {
@@ -33,7 +32,6 @@ public class Barcode2D {
         }
     }
 
-    //停止扫描
     public void stopScan(Context context) {
         Log.d(TAG, "StopScan BCD2");
         if (barcodeUtility != null) {
@@ -42,20 +40,18 @@ public class Barcode2D {
         }
     }
 
-    //打开
     public void open(Context context, IBarcodeResult iBarcodeResult) {
         Log.d(TAG, "Open BCD2");
         if (barcodeUtility != null) {
             this.iBarcodeResult = iBarcodeResult;
-            barcodeUtility.setOutputMode(context, 2);//设置广播接收数据
-            barcodeUtility.setScanResultBroadcast(context, "com.scanner.broadcast", "data");//设置接收数据的广播
-            barcodeUtility.open(context, BarcodeUtility.ModuleType.BARCODE_2D);//打开2D
-            barcodeUtility.setReleaseScan(context, false);//设置松开扫描按键，不停止扫描
-            barcodeUtility.setScanFailureBroadcast(context, true);//扫描失败也发送广播
-            barcodeUtility.enableContinuousScan(context, false);//关闭键盘助手连续扫描
-            barcodeUtility.enablePlayFailureSound(context, false);//关闭键盘助手 扫描失败的声音
-            //barcodeUtility.enablePlaySuccessSound(context, false);//关闭键盘助手 扫描成功的声音
-            barcodeUtility.enableEnter(context, false);//关闭回车
+            barcodeUtility.setOutputMode(context, 2);
+            barcodeUtility.setScanResultBroadcast(context, "com.scanner.broadcast", "data");
+            barcodeUtility.open(context, BarcodeUtility.ModuleType.BARCODE_2D);
+            barcodeUtility.setReleaseScan(context, false);
+            barcodeUtility.setScanFailureBroadcast(context, true);
+            barcodeUtility.enableContinuousScan(context, false);
+            barcodeUtility.enablePlayFailureSound(context, false);
+            barcodeUtility.enableEnter(context, false);
             barcodeUtility.setBarcodeEncodingFormat(context, 1);
 
             if (barcodeDataReceiver == null) {
