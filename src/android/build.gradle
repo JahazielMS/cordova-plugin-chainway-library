@@ -6,7 +6,7 @@ repositories{
 }
 
 dependencies {
-  implementation files("\\libs\\device_api.aar")
+  implementation files("\\src\\main\\libs\\device_api.aar")
   // compile(name:'device_api', ext:'aar')
 }
 
