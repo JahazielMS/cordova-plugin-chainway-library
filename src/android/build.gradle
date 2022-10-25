@@ -7,7 +7,7 @@ repositories {
 
 dependencies {
     implementation files("\\src\\main\\libs\\device_api.aar")
-    implementation 'com.android.tools.build:gradle:3.5.2'
+    // implementation 'com.android.tools.build:gradle:3.5.2'
     // compile(name:'device_api', ext:'aar')
 }
 
