@@ -11,6 +11,14 @@ dependencies {
     // compile(name:'device_api', ext:'aar')
 }
 
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
 android {
   packagingOptions {
     exclude 'META-INF/NOTICE'
