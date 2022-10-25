@@ -1,9 +1,10 @@
-
 buildscript {
   repositories{
     google()
     jcenter()
-    
+    flatDir {
+      dirs 'src/main/libs'
+    }
   }
 
   dependencies {
@@ -12,7 +13,6 @@ buildscript {
     classpath 'com.android.tools.build:gradle:3.5.2'
   }
 }
-
 
 allprojects {
     repositories {
@@ -30,6 +30,7 @@ android {
 
   defaultConfig {
     minSdkVersion 26
+    compileSdkVersion 29
   }
 }
 
