@@ -1,13 +1,24 @@
-repositories{    
-  jcenter()
-  flatDir {
-      dirs 'src/main/libs'
+
+buildscript {
+  repositories{
+    google()
+    jcenter()
+    
+  }
+
+  dependencies {
+    implementation files("/src/main/libs/device_api.aar")
+    classpath 'com.android.tools.build:gradle:3.5.2'
   }
 }
 
-dependencies {
-  implementation files("\\src\\main\\libs\\device_api.aar")
-  // compile(name:'device_api', ext:'aar')
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
 }
 
 android {
@@ -19,4 +30,8 @@ android {
   defaultConfig {
     minSdkVersion 26
   }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
