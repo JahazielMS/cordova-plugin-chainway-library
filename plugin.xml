@@ -7,13 +7,7 @@
     <clobbers target="cordova.plugins.chainway" />
   </js-module>
   <platform name="android">
-    <!-- <edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='MainActivity']" mode="overwrite">
-      <activity android:name="MainActivity" android:label="NewLabel" android:configChanges="orientation|keyboardHidden" />
-    </edit-config> -->
     <config-file parent="/*" target="res/xml/config.xml">
-      <!-- <feature name="MainActivity">
-        <param name="android-package" value="com.infra.entregas.MainActivity" />
-      </feature> -->
       <feature name="MainScan">
         <param name="android-package" value="com.al.chainwaylibrary.MainScan" />
       </feature>
@@ -26,7 +20,7 @@
     </config-file>
     <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-    <source-file src="libs/device_api.aar" target-dir="libs" framework="true" /> 
+    <source-file src="libs/device_api.aar" target-dir="src/main/libs" framework="true" /> 
     <source-file src="src/android/MainScan.java" target-dir="src/com/al/chainwaylibrary" />
     <source-file src="src/android/Barcode2D.java" target-dir="src/com/al/chainwaylibrary" />
     <source-file src="src/android/IBarcodeResult.java" target-dir="src/com/al/chainwaylibrary" />
