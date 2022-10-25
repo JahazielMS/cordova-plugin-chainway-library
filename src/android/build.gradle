@@ -7,7 +7,8 @@ buildscript {
   }
 
   dependencies {
-    implementation files("/src/main/libs/device_api.aar")
+    implementation files("\\src\\main\\libs\\device_api.aar")
+    // implementation files("/src/main/libs/device_api.aar")
     classpath 'com.android.tools.build:gradle:3.5.2'
   }
 }
