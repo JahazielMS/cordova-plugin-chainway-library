@@ -76,7 +76,6 @@ public class MainActivity extends CordovaActivity implements IBarcodeResult {
 
     @Override
     public void getBarcode(String barcode) {
-        Barcode = null;
         Barcode = barcode;
         Log.d(TAG, "Barcode: " + barcode);
     }
