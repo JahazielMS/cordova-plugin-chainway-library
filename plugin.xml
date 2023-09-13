@@ -17,6 +17,9 @@
       <feature name="IBarcodeResult">
         <param name="android-package" value="com.al.chainwaylibrary.IBarcodeResult" />
       </feature>
+      <feature name="ChainwayPlugin">
+        <param name="android-package" value="com.al.chainwaylibrary.ChainwayPlugin" />
+      </feature>
     </config-file>
     <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     <config-file parent="/*" target="AndroidManifest.xml"></config-file>
@@ -24,5 +27,6 @@
     <source-file src="src/android/MainScan.java" target-dir="src/com/al/chainwaylibrary" />
     <source-file src="src/android/Barcode2D.java" target-dir="src/com/al/chainwaylibrary" />
     <source-file src="src/android/IBarcodeResult.java" target-dir="src/com/al/chainwaylibrary" />
+    <source-file src="src/android/ChainwayPlugin.java" target-dir="src/com/al/chainwaylibrary" />
   </platform>
 </plugin>
